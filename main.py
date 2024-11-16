@@ -62,3 +62,4 @@ while True:
 
     # Cap the frame rate
     pygame.time.Clock().tick(60)
+    print("little boy")
