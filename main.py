@@ -1,3 +1,5 @@
 print("helllo world")
 print("helllo world taha")
 print("helllo world!!")
+print("little boyy")
+print("hi")
