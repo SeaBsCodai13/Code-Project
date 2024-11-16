@@ -8,25 +8,9 @@ pygame.init()
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
-# Load your artwork (replace 'your_dot.pdf' and 'background.pdf' with your file paths)
-try:
-    import fitz  # PyMuPDF for PDF handling (make sure you have it installed)
-except ImportError:
-    print("Please install PyMuPDF using: pip install pymupdf")
-    sys.exit()
-
-def load_pdf_image(pdf_path):
-    """Loads the first page of a PDF as a pygame surface."""
-    doc = fitz.open(pdf_path)
-    page = doc.load_page(0)
-    pix = page.get_pixmap()
-    image_surface = pygame.image.frombuffer(pix.samples, (pix.width, pix.height), "RGBA")
-    doc.close()
-    return image_surface
-
-# Load the background and dot images
-background_image = load_pdf_image("background.pdf")
-dot_image = load_pdf_image("your_dot.pdf")
+# Load the background and dot images using pygame
+background_image = pygame.image.load("Finance test grass.jpeg")
+dot_image = pygame.image.load("John Pork.jpg")
 dot_image = pygame.transform.scale(dot_image, (50, 50))  # Adjust size as needed
 
 # Set up the game window
@@ -62,4 +46,3 @@ while True:
 
     # Cap the frame rate
     pygame.time.Clock().tick(60)
-    print("little boy")
